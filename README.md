@@ -1,5 +1,5 @@
-# TP_Note_TITANIC
-TP noté 
+# Projet Réalisé Par :
+ 
 ZAIM SASSI Marwane<br>
 Eckson GLITHO<br>
 
@@ -27,3 +27,4 @@ L'objectif de ce projet est d'analyser le dataset du Titanic, en préparant et a
 ## Partie 4 : Modélisation et Évaluation
 - Construisez un modèle de classification pour prédire la survie des passagers (régression logistique, arbres de décision, forêts aléatoires, etc.).
 - Évaluez la performance du modèle en utilisant la précision et explorez d'autres métriques si approprié.
+- Divisez le dataset en ensembles d'entraînement et de test pour évaluer votre modèle et faites une cross-validation.
