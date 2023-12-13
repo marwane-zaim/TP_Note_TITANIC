@@ -10,11 +10,11 @@ from sklearn.model_selection import cross_val_score
 
 
 class TestTransformations(unittest.TestCase):
-    def setUp(self):
+    def test_setUp(self):
         # Setup code if needed
         pass
 
-    def test_transformation(self):
+    def test_test_transformation(self):
         # Load test data
         test_data = import_data_Train()
 
@@ -26,7 +26,7 @@ class TestTransformations(unittest.TestCase):
         # Add more assertions based on your specific transformation logic
 
 class TestLogisticRegression(unittest.TestCase):
-    def setUp(self):
+    def test_setUp(self):
         # Load test data
         test_data = import_data_Train()
 
@@ -41,7 +41,7 @@ class TestLogisticRegression(unittest.TestCase):
         # Instantiate the logistic regression model
         self.log_reg = LogisticRegression()
 
-    def test_logistic_regression_accuracy(self):
+    def test_test_logistic_regression_accuracy(self):
         # Fit the model
         self.log_reg.fit(self.X_train, self.y_train)
 
@@ -52,7 +52,7 @@ class TestLogisticRegression(unittest.TestCase):
         accuracy = accuracy_score(self.y_test, y_pred)
         self.assertTrue(accuracy >= 0.0 and accuracy <= 1.0)
 
-    def test_logistic_regression_confusion_matrix(self):
+    def test_test_logistic_regression_confusion_matrix(self):
         # Fit the model
         self.log_reg.fit(self.X_train, self.y_train)
 
@@ -63,7 +63,7 @@ class TestLogisticRegression(unittest.TestCase):
         confusion_mat = confusion_matrix(self.y_test, y_pred)
         self.assertEqual(confusion_mat.shape, (2, 2))  # Assuming binary classification
 
-    def test_logistic_regression_classification_report(self):
+    def test_test_logistic_regression_classification_report(self):
         # Fit the model
         self.log_reg.fit(self.X_train, self.y_train)
 
@@ -74,7 +74,7 @@ class TestLogisticRegression(unittest.TestCase):
         classification_rep = classification_report(self.y_test, y_pred)
         self.assertNotEqual(classification_rep, "")
 
-    def test_logistic_regression_cross_val_score(self):
+    def test_test_logistic_regression_cross_val_score(self):
         # Cross-validate the model
         scores = cross_val_score(self.log_reg, self.X_test, self.y_test, cv=5)
 
