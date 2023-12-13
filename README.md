@@ -28,3 +28,7 @@ L'objectif de ce projet est d'analyser le dataset du Titanic, en préparant et a
 - Construisez un modèle de classification pour prédire la survie des passagers (régression logistique, arbres de décision, forêts aléatoires, etc.).
 - Évaluez la performance du modèle en utilisant la précision et explorez d'autres métriques si approprié.
 - Divisez le dataset en ensembles d'entraînement et de test pour évaluer votre modèle et faites une cross-validation.
+
+## Partie 5 : Écrire des fichiers des tests
+- Écrire les fichiers de tests.
+- Ajouter un linter et pytest dans GitHub Actions.
