@@ -7,18 +7,14 @@ data_train = import_data_Train()
 # data_test = import_data_Test()
 
 def transformation(data):
-    #Apply the clean function to the ticket column
-    data['Ticket'] = data['Ticket'].apply(clean_ticket)
-    print(data['Ticket'].head(30))
+    data.drop(['Name', 'Ticket', 'Cabin', 'Embarked', 'PassengerId'], axis=1, inplace=True)
+    data['Sex'] = data['Sex'].replace({'male': 1, 'female': 0})
+    print(data.head())
 
     missing_values = data.isnull().sum()
     print("Missing values before filling:", missing_values)
 
     data['Age'].fillna(data['Age'].mean(), inplace=True)
-    
-    data['Cabin'].fillna('C00', inplace=True)
-    
-    data['Cabin'] = data['Cabin'].str[:4].str.replace(r'\s', '')
     
     missing_values_after_fill = data['Age'].isnull().sum()
     
@@ -26,18 +22,7 @@ def transformation(data):
     
     print("Filled 'Age' column:", data['Age'])
     
-    print("Filled 'Cabin' column:", data['Cabin'].head(30))
 
-    options = ["S", "C", "Q"]
-    data['Embarked'].fillna(np.random.choice(options), inplace=True)
-
-    return data    
-
-#function to clean the ticket column
-def clean_ticket(ticket):
-    if ' ' in ticket:
-        return ticket.split()[-1]
-    else:
-        return ticket
+    return data
 
 transformation(data_train)
