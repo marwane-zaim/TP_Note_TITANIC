@@ -6,9 +6,11 @@ from explore import import_data_Train, import_data_Test
 data_train = import_data_Train()  # Loading training data
 data_test = import_data_Test()  # Loading test data
 
+
 def transformation(data):
     # Dropping unnecessary columns from the dataset
     data.drop(['Name', 'Ticket', 'Cabin', 'Embarked', 'PassengerId'], axis=1, inplace=True)
+    
     
     # Encoding 'Sex' column to numerical values
     data['Sex'] = data['Sex'].replace({'male': 1, 'female': 0})
@@ -29,5 +31,6 @@ def transformation(data):
     print("Filled 'Age' column:", data['Age'])
 
     return data  # Returning the transformed data
+
 
 transformation(data_train)  # Applying the transformation function to the training data
