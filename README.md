@@ -1,7 +1,7 @@
 # TP_Note_TITANIC
 TP noté 
 ZAIM SASSI Marwane<br>
-EcksonGLITHO<br>
+Eckson GLITHO<br>
 
 # Titanic Survival Prediction
 
