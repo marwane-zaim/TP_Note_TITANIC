@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 from explore import import_data_Train, import_data_Test
 
 # Load training and test data files

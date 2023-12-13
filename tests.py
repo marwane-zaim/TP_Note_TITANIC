@@ -1,20 +1,21 @@
-import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, make_scorer
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.model_selection import cross_val_score
-from explore import import_data_Test, import_data_Train
+from explore import import_data_Train
 from process import transformation
+
 
 def test_drop_columns():
     # Load the training data
     data_train = import_data_Train()
-    
+
     # Apply transformation to drop columns
     transformed_data = transformation(data_train)
     assert 'Name' not in transformed_data.columns
 
     # Add more assertions for the dropped columns
+
 
 def test_sex_replacement():
     # Load the training data
@@ -26,6 +27,7 @@ def test_sex_replacement():
 
     # Add more assertions for the 'Sex' replacement
 
+
 def test_missing_values():
     # Load the training data
     data_train = import_data_Train()
@@ -36,6 +38,7 @@ def test_missing_values():
 
     # Add more assertions for missing values in 'Age'
 
+
 def test_logistic_regression():
     # Load the training data
     data_train = import_data_Train()
@@ -44,7 +47,7 @@ def test_logistic_regression():
     data_train_trans = transformation(data_train)
 
     # Split data into training and testing sets
-    X = data_train_trans.drop("Survived", axis=1) 
+    X = data_train_trans.drop("Survived", axis=1)
     y = data_train_trans["Survived"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
