@@ -2,46 +2,54 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#Load data file
+# Function to import training data
 def import_data_Train() -> pd.DataFrame:
     """
-    Import csv file as a dataframe
+    Import CSV file as a DataFrame (Training Data)
     Output: data [pd.DataFrame]
     """
     data = pd.read_csv("Data/train.csv")
     return data
 
+# Function to import test data
 def import_data_Test() -> pd.DataFrame:
     """
-    Import csv file as a dataframe
+    Import CSV file as a DataFrame (Test Data)
     Output: data [pd.DataFrame]
     """
     data = pd.read_csv("Data/test.csv")
     return data
 
+# Load training data
 data = import_data_Train()
 
-# #Show the first rows to understand the data structure
-# print(data.head())
+# Display the first few rows to understand data structure
+print(data.head())
 
-# #information about data tyypes, missing values, etc
-# print(data.info())
+# Information about data types, missing values, etc.
+print(data.info())
 
-# #
-# print(data.describe())
-# print(data['Survived'].value_counts())
+# Summary statistics of numerical columns
+print(data.describe())
 
-# sns.pairplot(data, hue='Survived')
-# plt.show()
+# Count of survivors vs non-survivors
+print(data['Survived'].value_counts())
 
-# sns.countplot(x='Survived', data=data)
-# plt.title('Repartition des survivants')
-# plt.show()
+# Pairplot to visualize relationships between features
+sns.pairplot(data, hue='Survived')
+plt.show()
 
-# sns.countplot(x='Survived', hue='Sex', data=data)
-# plt.title('Repartition des survivants par sexe')
-# plt.show()
+# Count of survivors vs non-survivors
+sns.countplot(x='Survived', data=data)
+plt.title('Distribution of Survivors')
+plt.show()
 
-# sns.countplot(x='Survived', hue='Pclass', data=data)
-# plt.title('Repartition des survivants par sexe')
-# plt.show()
+# Survival count by gender
+sns.countplot(x='Survived', hue='Sex', data=data)
+plt.title('Survival Distribution by Gender')
+plt.show()
+
+# Survival count by passenger class
+sns.countplot(x='Survived', hue='Pclass', data=data)
+plt.title('Survival Distribution by Passenger Class')
+plt.show()
