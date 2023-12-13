@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
-from explore import import_data_Train
+from explore import import_data_Train, import_data_Test
 
 #Load data file
 data_train = import_data_Train()
-# data_test = import_data_Test()
+data_test = import_data_Test()
 
 def transformation(data):
     data.drop(['Name', 'Ticket', 'Cabin', 'Embarked', 'PassengerId'], axis=1, inplace=True)

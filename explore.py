@@ -11,13 +11,13 @@ def import_data_Train() -> pd.DataFrame:
     data = pd.read_csv("Data/train.csv")
     return data
 
-# def import_data_Test() -> pd.DataFrame:
-#     """
-#     Import csv file as a dataframe
-#     Output: data [pd.DataFrame]
-#     """
-#     data = pd.read_csv("Data/test.csv")
-#     return data
+def import_data_Test() -> pd.DataFrame:
+    """
+    Import csv file as a dataframe
+    Output: data [pd.DataFrame]
+    """
+    data = pd.read_csv("Data/test.csv")
+    return data
 
 data = import_data_Train()
 
